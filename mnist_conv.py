@@ -29,7 +29,7 @@ y_test = keras.utils.to_categorical(y_test, num_classes=10)
 
 ### Creating the Convolutional Model
 
-# Architecture: INPUT -> [CONV -> RELU -> POOL]*2 -> FC -> RELU -> -> DROPOUT->FC
+# Architecture: INPUT -> [CONV -> RELU -> POOL]*2 -> FC -> RELU -> DROPOUT->FC
 
 model = Sequential()
 
