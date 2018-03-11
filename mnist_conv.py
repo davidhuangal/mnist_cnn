@@ -29,7 +29,7 @@ y_test = keras.utils.to_categorical(y_test, num_classes=10)
 
 ### Creating the Convolutional Model
 
-# Architecture: INPUT -> [CONV -> RELU -> POOL]*2 -> FC -> RELU -> -> DROPOUT->FC
+# Architecture: INPUT -> [CONV -> RELU -> POOL]*2 -> FC -> RELU -> DROPOUT -> FC
 
 model = Sequential()
 
@@ -51,7 +51,7 @@ model.add(Activation('softmax'))
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 ### Train the Model
-model.fit(X_train, y_train, epochs=5)
+model.fit(X_train, y_train, epochs=12, batch_size=128)
 
 ########################
 ### Evaluating the model
