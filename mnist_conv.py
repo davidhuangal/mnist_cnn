@@ -1,6 +1,6 @@
 import keras
 from keras.models import Sequential
-from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, Activation, Dropout
+from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, Activation, Dropout, BatchNormalization
 import numpy
 from keras.datasets import mnist
 
@@ -35,15 +35,18 @@ model = Sequential()
 
 model.add(Conv2D(filters=32, kernel_size=(3,3), padding='same', input_shape = (width, height, depth)))
 model.add(Activation('relu'))
+model.add(BatchNormalization())
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Conv2D(filters=64, kernel_size=(3,3), padding='same'))
 model.add(Activation('relu'))
+model.add(BatchNormalization())
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Flatten())
 model.add(Dense(64))
 model.add(Activation('relu'))
+model.add(BatchNormalization())
 model.add(Dropout(0.5))
 model.add(Dense(num_classes))
 model.add(Activation('softmax'))
