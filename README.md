@@ -4,10 +4,10 @@
 This code trains a convolutional neural network on the MNIST dataset. Uses the [Keras](https://keras.io/) and [NumPy](http://www.numpy.org/) libraries.
 
 ## Architecture
-INPUT -> [CONV -> RELU -> POOL]*2 -> FC -> RELU -> DROPOUT -> FC
+INPUT -> [CONV -> RELU -> BATCHNORM -> POOL]*2 -> FC -> RELU -> BATCHNORM -> DROPOUT -> FC
 
 ## Accuracy
-This model has achieved 99.19% test accuracy on the MNIST dataset with batch size of 128 and 12 epochs.
+This model has achieved 99.28% test accuracy on the MNIST dataset with batch size of 128 and 12 epochs.
 
 ## Dependencies
 
